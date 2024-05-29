@@ -1,4 +1,4 @@
-name: CI/CD for react Todo 
+name: CI/CD for react Todo
 
 on:
   push:
@@ -36,9 +36,8 @@ jobs:
 
   # Deploy Job
   deploy:
-   
     needs: build
-    
+
     runs-on: ubuntu-latest
     steps:
       - name: Download artifact
@@ -50,5 +49,5 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.KEY }} #this is the key of the access token
+          github_token: ${{ secrets.CICD_LEARN }} #this is the key of the access token
           publish_dir: ./todo/build
