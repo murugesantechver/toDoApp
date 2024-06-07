@@ -27,6 +27,11 @@ jobs:
         run: |
           cd todo
           npm run build
+          
+      - name: Run Cypress tests
+         run: |
+          cd todo
+          npx cypress run
 
       - name: Upload artifact to enable deployment
         uses: actions/upload-artifact@v3
