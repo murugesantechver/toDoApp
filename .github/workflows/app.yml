@@ -27,16 +27,16 @@ jobs:
         run: |
           cd todo
           npm run build
-          
+
       - name: Run Cypress tests
-         run: |
+        run: |
           cd todo
           npx cypress run
 
       - name: Upload artifact to enable deployment
         uses: actions/upload-artifact@v3
         with:
-          name: poduction file
+          name: production file
           path: ./todo/build
 
   # Deploy Job
@@ -48,7 +48,7 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v3
         with:
-          name: poduction file
+          name: production file
           path: ./todo/build
 
       - name: Deploy to GitHub Pages
